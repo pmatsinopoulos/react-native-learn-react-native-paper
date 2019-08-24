@@ -13,7 +13,7 @@ import {Button} from 'react-native-paper';
 const App = props => {
   return (
     <View style={styles.AppContainer}>
-      <Button>Press Me</Button>
+      <Button icon="camera">Press Me</Button>
     </View>
   );
 };
