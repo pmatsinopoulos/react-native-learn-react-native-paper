@@ -8,14 +8,14 @@
 
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import {Button} from 'react-native-paper';
+import {withTheme} from 'react-native-paper';
 
-const App = () => {
+const App = props => {
+  const {colors} = props.theme;
+
   return (
     <View style={styles.AppContainer}>
-      <Button raised theme={{roundness: 3}}>
-        Press Me
-      </Button>
+      <Text style={{color: colors.primary}}>Foo</Text>
     </View>
   );
 };
@@ -25,7 +25,8 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center'
-  }
+    justifyContent: 'center',
+  },
 });
-export default App;
+
+export default withTheme(App);
