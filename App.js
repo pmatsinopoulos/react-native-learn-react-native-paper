@@ -7,15 +7,13 @@
  */
 
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
-import {withTheme} from 'react-native-paper';
+import {View, StyleSheet} from 'react-native';
+import Button from './components/FancyButton';
 
 const App = props => {
-  const {colors} = props.theme;
-
   return (
     <View style={styles.AppContainer}>
-      <Text style={{color: colors.primary}}>Foo</Text>
+      <Button>Press Me</Button>
     </View>
   );
 };
@@ -29,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withTheme(App);
+export default App;
