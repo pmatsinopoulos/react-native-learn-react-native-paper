@@ -8,7 +8,7 @@
 
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import Button from './components/FancyButton';
+import {Button} from 'react-native-paper';
 
 const App = props => {
   return (
