@@ -6,24 +6,41 @@
  * @flow
  */
 
-import React from 'react';
+import React, {useState} from 'react';
 import {Image, View, StyleSheet} from 'react-native';
-import {Button} from 'react-native-paper';
+import {ActivityIndicator, Button, Colors} from 'react-native-paper';
 
 const App = () => {
+  const [load, setLoad] = useState(false);
+
+  const buttonHandler = () => {
+    setLoad(true);
+    setTimeout(() => {
+      setLoad(false);
+    }, 2000);
+  };
+
+  const button = (
+    <Button
+      icon={({size, color}) => {
+        return (
+          <Image
+            source={require('./assets/images/oil.png')}
+            style={{width: size, height: size, tintColor: color}}
+          />
+        );
+      }}
+      onPress={buttonHandler}>
+      Press Me
+    </Button>
+  );
+
+  const loading = <ActivityIndicator animating={true} color={Colors.red800} />;
+
   return (
     <View style={styles.AppContainer}>
-      <Button
-        icon={({size, color}) => {
-          return (
-            <Image
-              source={require('./assets/images/oil.png')}
-              style={{width: size, height: size, tintColor: color}}
-            />
-          );
-        }}>
-        Press Me
-      </Button>
+      {load && loading}
+      {!load && button}
     </View>
   );
 };
