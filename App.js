@@ -13,12 +13,7 @@ import {Button} from 'react-native-paper';
 const App = props => {
   return (
     <View style={styles.AppContainer}>
-      <Button
-        icon={{
-          uri: 'https://avatars0.githubusercontent.com/u/17571969?v=3&s=400',
-        }}>
-        Press Me
-      </Button>
+      <Button icon={require('./assets/images/oil.png')}>Press Me</Button>
     </View>
   );
 };
