@@ -7,13 +7,23 @@
  */
 
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {Image, View, StyleSheet} from 'react-native';
 import {Button} from 'react-native-paper';
 
-const App = props => {
+const App = () => {
   return (
     <View style={styles.AppContainer}>
-      <Button icon={require('./assets/images/oil.png')}>Press Me</Button>
+      <Button
+        icon={({size, color}) => {
+          return (
+            <Image
+              source={require('./assets/images/oil.png')}
+              style={{width: size, height: size, tintColor: color}}
+            />
+          );
+        }}>
+        Press Me
+      </Button>
     </View>
   );
 };
